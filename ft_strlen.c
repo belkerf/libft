@@ -1,4 +1,5 @@
-int	strlen(char *str)
+#define size_t long unsigned int
+size_t	ft_strlen(char *str)
 {
 	int	i;
 

@@ -1,11 +1,7 @@
-int	isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	while (*str)
-	{
-		if (*str >= '0' && *str <= 'z')
-			str++;
-		else
-			return (0);
-	}
-	return (1);
+	if (c >= '0' && c <= '9')
+		return (2048);
+	else
+		return (0);
 }
