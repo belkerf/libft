@@ -1,4 +1,4 @@
-int	atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	n;
 	int	sign;
@@ -9,7 +9,7 @@ int	atoi(char *str)
 	{
 		str++;
 	}
-	while (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign *= -1;
@@ -18,6 +18,7 @@ int	atoi(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		n = n * 10 + (*str - '0');
+		str++;
 	}
 	return (sign * n);
 }
