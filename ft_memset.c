@@ -1,12 +1,30 @@
-#define size_t long unsigned int
+/* ************************************************************************** */
+/*
+        */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+
++:+     */
+/*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/09/09 15:57:30 by jbelkerf         ###   ########.fr       */
+/*
+        */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
+	char	*p;
 
+	p = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		s[i] = c;
+		p[i] = c;
 		i++;
 	}
 	return (s);

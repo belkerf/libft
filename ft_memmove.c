@@ -1,25 +1,37 @@
 /* ************************************************************************** */
-/*
-        */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-+:+     */
+/*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:01:35 by jbelkerf          #+#    #+#             */
 /*   Updated: 2024/09/09 15:57:30 by jbelkerf         ###   ########.fr       */
-/*
-        */
+/*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (8);
-	else if (c >= '0' && c <= '9')
-		return (8);
-	else
-		return (0);
+	char	*s;
+	char	*d;
+	char	*t;
+	size_t	i;
+
+	i = 0;
+	s = (char *)src;
+	d = (char *)dest;
+	t = (char *)malloc(n * sizeof(char));
+	while (i < n)
+	{
+		t[i] = s[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		d[i] = t[i];
+		i++;
+	}
+	return (dest);
 }
