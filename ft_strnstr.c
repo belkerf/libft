@@ -11,19 +11,37 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *lil, size_t len)
 {
-	unsigned char	*p;
-	size_t		i;
+	char	*p;
+	size_t	j;
+	size_t	i;
 
+	if (*lil == '\0')
+		return ((char *)big);
 	i = 0;
-	p = (unsigned char *)s;
-	while (i < n)
+	while (*big)
 	{
-		if (*p == (unsigned char)c)
-			return ((void *)p);
-		p++;
+		j = 0;
+		if (*big == lil[j])
+		{
+			p = (char *)big;
+			while (i < len && lil[j] && *big)
+			{
+				if (*big != lil[j])
+					break ;
+				j++;
+				big++;
+				i++;
+			}
+			if (lil[j] == '\0')
+				return (p);
+			big = p;
+			i = i - j;
+		}
 		i++;
+		big++;
 	}
 	return (0);
+
 }

@@ -19,6 +19,8 @@
 # include <stddef.h>
 # include <stdlib.h>
 
+char    *ft_strnstr(const char *big, const char *lil, size_t len);
+size_t  ft_strlcat(char *dst, const char *src, size_t size);
 size_t  ft_strlcpy(char *dest, const char *src, size_t size);
 void    *ft_memchr(const void *s, int c, size_t n);
 int     ft_memcmp(const void *s1, const void *s2, size_t n);
