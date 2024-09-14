@@ -16,9 +16,15 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
 
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putchar_fd(char c, int fd);
+char    *ft_strdup(const char *s);
+void    *ft_calloc(size_t nmemb, size_t size);
 char    *ft_strnstr(const char *big, const char *lil, size_t len);
 size_t  ft_strlcat(char *dst, const char *src, size_t size);
 size_t  ft_strlcpy(char *dest, const char *src, size_t size);
