@@ -17,7 +17,5 @@ clean:
 fclean:
 	rm -rf *.o
 	rm -rf *.a
-bonus:
-	ls
 re:
 	ls
