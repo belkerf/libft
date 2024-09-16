@@ -21,13 +21,13 @@ int	c_word(char const *s, char c)
 	w = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] != c && s[i])
 		{
 			w++;
 			while (s[i] != c && s[i])
 				i++;
 		}
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
 	}
 	return (w);
@@ -45,10 +45,11 @@ int	c_count(const char *s, char c, int i)
 	}
 	return (w);
 }
-char	*f_copy(const char *s, char *re,char c, int i)
+char	*f_copy(const char *s, char *re,char c, int i, int w_c)
 {
 	int	j;
 
+	re = (char *)malloc((w_c + 1) * sizeof(char));
 	j = 0;
 	while (s[i] != c && s[i])
 	{
@@ -56,7 +57,7 @@ char	*f_copy(const char *s, char *re,char c, int i)
 		i++;
 		j++;
 	}
-	re[i] = 0;
+	re[j] = '\0';
 	return (re);
 }
 char	**ft_split(char const *s, char c)
@@ -77,8 +78,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c && s[i] != '\0')
 		{
 			w_c = c_count(s, c, i);
-			re[j] = (char *)malloc((w_c + 1) * sizeof(char));
-			re[j] = f_copy(s, re[j],c, i);
+			re[j] = f_copy(s, re[j],c, i, w_c);
 			i = i + w_c;
 			j++;
 		}
