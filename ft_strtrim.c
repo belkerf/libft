@@ -25,30 +25,61 @@ int	is_set(char c, char const *set)
 	return (0);
 }
 
+char	*f_copy(const char *s, int l,const char *set)
+{
+	char	*re;
+	int	i;
+	int	j;
+
+	re = (char *)malloc((l + 1) * sizeof(char));
+	j = 0;
+	i = 0;
+	while (is_set(s[i], set))
+	{
+		i++;
+	}
+	while (j < l)
+	{
+		re[j] = s[i];
+		i++;
+		j++;
+	}
+	re[j] = 0;
+	return (re);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	i;
 	char	*re;
-	char	*er;
+	int	l;
 
-	re = ft_strdup(s1);
-	if (*set == '\0' || *s1 == '\0')
+	i = 0;
+	if (*s1 == '\0')
+	{
+		re = (char *)malloc(1);
+		*re = '\0';
 		return (re);
-	while (*re)
-	{
-		if (is_set(*re, set))
-			re++;
-		else
-			break ;
 	}
-	i = ft_strlen(re);
+	if (*set == '\0')
+	{
+		re = ft_strdup(s1);
+		return (re);
+	}
+	while (is_set(s1[i], set))
+		i++;
+	if (s1[i] == '\0')
+	{
+		re = (char *)malloc(1);
+		*re = 0;
+		return (re);
+	}
+	l = ft_strlen(s1) - i;
+	i = ft_strlen(s1);
 	i--;
-	while (is_set(re[i], set))
-	{
-		re[i] = 0;
+	while (is_set(s1[i], set))
 		i--;
-	}
-	er = ft_strdup(re);
-	free(re);
-	return (er);
+	l = l - (ft_strlen(s1) - i) + 1;
+	re = f_copy(s1, l, set);
+	return (re);
 }
