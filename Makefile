@@ -26,5 +26,8 @@ bonus:
 	$(RA) libft.a
 	rm -rf *.o
 so:
-	$(CC) -fPIC $(CFLAGS) $(SRC)
-	gcc -shared -o libft.so $(OBJ)
+	$(CC) $(CFLAGS) *.c
+	$(AR) -rc libft.a *.o
+	$(AR) -t libft.a
+	$(RA) libft.a
+	rm -rf *.o
