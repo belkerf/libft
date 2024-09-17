@@ -26,6 +26,7 @@ void *content;
 struct s_list *next;
 } t_list;
 
+void    ft_lstadd_front(t_list **lst, t_list *new);
 t_list  *ft_lstnew(void *content);
 void    ft_striteri(char *s, void (*f)(unsigned int , char*));
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
