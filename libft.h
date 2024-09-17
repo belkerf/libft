@@ -20,6 +20,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char    *ft_itoa(int n);
 char    **ft_split(char const *s, char c);
 char    *ft_strtrim(char const *s1, char const *set);
