@@ -1,5 +1,6 @@
 /* ************************************************************************** */
-/*                                                                            */
+/*
+  */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -11,31 +12,16 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*p;
-	char	*r;
 	int	i;
+	int	l;
 
-	if (c >= 1024)
-		c = c - 1024;
-	if (c > 256)
-		c = c - 256;
 	i = 0;
-	p = (char *)s;
-	while (*p)
+	l = ft_strlen(s);
+	while (i < l && s[i])
 	{
-		if (*p == c)
-		{
-			r = p;
-			i++;
-		}
-		p++;
+		f(i, &s[i]);
+		i++;
 	}
-	if (c == '\0')
-		return (p);
-	if (i != 0)
-		return (r);
-	else
-		return (0);
 }
