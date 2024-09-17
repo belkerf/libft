@@ -20,6 +20,13 @@
 # include <stddef.h>
 # include <stdlib.h>
 
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+t_list  *ft_lstnew(void *content);
 void    ft_striteri(char *s, void (*f)(unsigned int , char*));
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char    *ft_itoa(int n);

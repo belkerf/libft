@@ -19,3 +19,9 @@ fclean:
 	rm -rf *.a
 re:
 	ls
+bonus:
+	$(CC) $(CFLAGS) *.c
+	$(AR) -rc libft.a *.o
+	$(AR) -t libft.a
+	$(RA) libft.a
+	rm -rf *.o
