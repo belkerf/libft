@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:05:15 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 16:24:04 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:33:35 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	if (*s1 == '\0')
-	{
-		re = (char *)malloc(1);
-		*re = '\0';
-		return (re);
-	}
+		return (ft_strdup(""));
 	if (*set == '\0')
-	{
-		re = ft_strdup(s1);
-		return (re);
-	}
+		return (ft_strdup(s1));
 	while (is_set(s1[i], set))
 		i++;
 	if (s1[i] == '\0')
