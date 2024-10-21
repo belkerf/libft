@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:00:26 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 15:09:41 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:08:06 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/10/21 16:37:38 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }

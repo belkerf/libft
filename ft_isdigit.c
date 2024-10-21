@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:09:11 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 15:09:12 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 15:59:59 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/10/21 16:00:01 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_isdigit(int c)
 {
-	int	n;
-	int	sign;
-
-	n = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-	{
-		str++;
-	}
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		n = n * 10 + (*str - '0');
-		str++;
-	}
-	return (sign * n);
+	if (c >= '0' && c <= '9')
+		return (2048);
+	else
+		return (0);
 }

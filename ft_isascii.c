@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:10:24 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 15:10:25 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 15:59:34 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/10/21 15:59:36 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_isascii(int c)
 {
-	int	i;
-
-	i = 'a' - 'A';
-	if (c >= 'A' && c <= 'Z')
-	{
-		return (c + i);
-	}
-	return (c);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

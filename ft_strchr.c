@@ -1,47 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:10:33 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 15:10:34 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:07:49 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/10/21 16:07:50 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *lil, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*p;
-	size_t	j;
-	size_t	i;
+	char		*p;
 
-	if (*lil == '\0')
-		return ((char *)big);
-	i = 0;
-	while (*big)
+	if (c >= 1024)
+		c = c - 1024;
+	if (c > 256)
+		c = c - 256;
+	p = (char *)s;
+	while (*p)
 	{
-		j = 0;
-		if (*big == lil[j])
-		{
-			p = (char *)big;
-			while (i < len && lil[j] && *big)
-			{
-				if (*big != lil[j])
-					break ;
-				j++;
-				big++;
-				i++;
-			}
-			if (lil[j] == '\0')
-				return (p);
-			big = p;
-			i = i - j;
-		}
-		i++;
-		big++;
+		if (*p == c)
+			return (p);
+		p++;
 	}
-	return (0);
+	if (c == '\0')
+		return (p);
+	else
+		return (0);
 }

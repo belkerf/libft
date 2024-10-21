@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:11:59 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 15:12:00 by jbelkerf         ###   ########.fr       */
+/*   Created: 2024/10/21 16:09:13 by jbelkerf          #+#    #+#             */
+/*   Updated: 2024/10/21 16:09:14 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	char	*b;
 	char	*s;
-	char	*d;
-	char	*t;
 	size_t	i;
 
-	i = 0;
+	if (n == 0)
+		return (dest);
+	b = (char *)dest;
 	s = (char *)src;
-	d = (char *)dest;
-	t = (char *)malloc(n * sizeof(char));
-	while (i < n)
-	{
-		t[i] = s[i];
-		i++;
-	}
 	i = 0;
 	while (i < n)
 	{
-		d[i] = t[i];
+		b[i] = s[i];
 		i++;
 	}
 	return (dest);
