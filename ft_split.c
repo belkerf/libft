@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:07:57 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 17:59:07 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/21 21:53:49 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	c_count(const char *s, char c, int i)
 	return (w);
 }
 
-char	*f_copy(const char *s, char *re, char c, int i)
+char	*ff_copy(const char *s, char *re, char c, int i)
 {
 	int	j;
 	int	w_c;
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c && s[i] != '\0')
 		{
 			w_c = c_count(s, c, i);
-			re[j] = f_copy(s, re[j], c, i);
+			re[j] = ff_copy(s, re[j], c, i);
 			i = i + w_c;
 			j++;
 		}
