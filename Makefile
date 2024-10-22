@@ -22,9 +22,8 @@ clean:
 	rm -rf *.o
 fclean:
 	rm -rf *.o
-	rm -rf *.a
-re:
-	ls
+	rm -rf $(NAME)
+re: fclean all
 bonus: $(BONU)
 	$(AR) -rc $(NAME) $(BONU)
 	$(AR) -t $(NAME)
