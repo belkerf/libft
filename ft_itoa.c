@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:00:27 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 17:54:12 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:00:53 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,12 @@ char	*full_it(int n, int w)
 
 	if (n < 0)
 	{
-		re = (char *)malloc((w + 2) * sizeof(char));
-		re[0] = '-';
 		n = n * (-1);
 		w = w + 1;
 	}
-	else
-		re = (char *)malloc((w + 1) * sizeof(char));
+	re = (char *)malloc((w + 1) * sizeof(char));
+	if (re == NULL)
+		return (NULL);
 	re[w] = 0;
 	while (n != 0)
 	{
@@ -45,6 +44,8 @@ char	*full_it(int n, int w)
 		re[w] = n % 10 + '0';
 		n = n / 10;
 	}
+	if (w == 1)
+		re[0] = '-';
 	return (re);
 }
 

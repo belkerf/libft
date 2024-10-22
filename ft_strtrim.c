@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:05:15 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 18:33:35 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:55:26 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*f_copy(const char *s, int l, const char *set)
 	int		j;
 
 	re = (char *)malloc((l + 1) * sizeof(char));
+	if (re == NULL)
+		return (NULL);
 	j = 0;
 	i = 0;
 	while (is_set(s[i], set))

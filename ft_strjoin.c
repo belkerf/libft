@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:07:26 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 16:33:41 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:04:19 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	i = 0;
 	re = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (re == NULL)
+		return (NULL);
 	while (s1[i])
 	{
 		re[j] = s1[i];

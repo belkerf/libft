@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:07:42 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 16:34:10 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:23:08 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strdup(const char *s)
 	l = ft_strlen(s);
 	l++;
 	d = (char *)malloc(l * sizeof(char));
+	if (d == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		d[i] = s[i];

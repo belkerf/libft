@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:07:57 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 21:53:49 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:07:17 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ char	*ff_copy(const char *s, char *re, char c, int i)
 
 	w_c = c_count(s, c, i);
 	re = (char *)malloc((w_c + 1) * sizeof(char));
+	if (re == 0)
+		return (0);
 	j = 0;
 	while (s[i] != c && s[i])
 	{
@@ -75,6 +77,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	w_c = c_word(s, c);
 	re = (char **)malloc((w_c + 1) * sizeof(char *));
+	if (re == 0)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c)
