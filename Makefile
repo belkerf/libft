@@ -7,13 +7,12 @@ BONU = ft_itoa.o ft_lstadd_back.o ft_lstadd_front.o ft_lstclear.o ft_lstdelone.o
 	   ft_strmapi.o ft_strtrim.o ft_substr.o
 CC=gcc
 AR=ar
-RA=ranlib
+ARFLAG= -rcs
 CFLAGS= -c -Wall -Werror -Wextra
-
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) $< -o $@
 $(NAME) : $(OBJ)
-	$(AR) -rc $(NAME) $(OBJ)
-	$(AR) -t $(NAME)
-	$(RA) $(NAME)
+	$(AR) $(ARFLAG) $(NAME) $(OBJ)
 
 $(OBJ) : libft.h
 
@@ -25,8 +24,6 @@ fclean:
 	rm -rf $(NAME)
 re: fclean all
 bonus: $(BONU)
-	$(AR) -rc $(NAME) $(BONU)
-	$(AR) -t $(NAME)
-	$(RA) $(NAME)
+	$(AR) $(ARFLAG) $(NAME) $(BONU)
 
 $(BONU) : libft.h
