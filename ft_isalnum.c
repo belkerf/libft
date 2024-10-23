@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:59:13 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 16:41:06 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:11:40 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (8);
+		return (1);
 	else if (c >= '0' && c <= '9')
-		return (8);
+		return (1);
 	else
 		return (0);
 }

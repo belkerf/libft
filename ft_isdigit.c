@@ -6,7 +6,7 @@
 /*   By: jbelkerf <jbelkerf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:59:59 by jbelkerf          #+#    #+#             */
-/*   Updated: 2024/10/21 16:00:01 by jbelkerf         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:01:07 by jbelkerf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (2048);
+		return (1);
 	else
 		return (0);
 }
